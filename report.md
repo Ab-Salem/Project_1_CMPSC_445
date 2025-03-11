@@ -12,6 +12,51 @@ This data science project focuses on analyzing job posting data from various sou
 
 The analysis uses scraped job data from websites like Indeed, LinkedIn, Glassdoor, USA Jobs, and FlexJobs, focusing on roles in computer science, data science, and AI.
 
+## Data Collection Process
+
+### Web Scraping Infrastructure
+
+The project employs automated web scraping tools built with Selenium WebDriver to collect job posting data from multiple job platforms:
+
+#### USAJOBS Scraper
+- **Implementation**: Uses Selenium with Chrome WebDriver to automate browsing and data extraction
+- **Search Strategy**: 
+  - Searches across 8 tech job categories containing 50+ specific job titles
+  - Categories include Software Engineering, Data Science & AI, Cybersecurity, Cloud Computing, Software Testing, Database Technologies, IT Project Management, and other IT roles
+  - Job titles are randomized during search to avoid pattern detection
+- **Navigation**: 
+  - Automatically navigates through multiple pages of search results
+  - Implements pagination handling with waiting mechanisms to ensure complete page loading
+  - Uses intelligent delays between requests (random 1-3 seconds between pages, 2-5 seconds between searches)
+- **Extraction Process**:
+  - Extracts key fields: job title, agency name, location, salary range, closing date, and job URL
+  - Handles potential missing fields gracefully
+  - Uses robust error handling to prevent crashes from stale elements or timeouts
+- **Data Management**:
+  - Implements intermediate saves for large datasets (every 500 jobs)
+  - Creates timestamped CSV files in a dedicated exports directory
+  - Maintains search term metadata with each job record for analysis purposes
+
+#### FlexJobs Scraper
+- Similar infrastructure with customizations for FlexJobs website structure
+- Focuses on remote and flexible work opportunities in tech fields
+
+### Data Aggregation Approach
+
+The combined approach resulted in comprehensive dataset collection:
+- **Volume**: 3,345 total job listings across all platforms
+- **Geographic Coverage**: 1,543 US-based positions across 45 different locations
+- **Role Diversity**: 20 distinct standardized job titles after normalization
+- **Data Completeness**: Special attention to salary information, with structured extraction of salary ranges and compensation details
+
+### Data Quality Considerations
+
+The scrapers incorporate several mechanisms to ensure data quality:
+- **Anti-Detection Measures**: Random delays and user-agent configuration
+- **Error Recovery**: Automatic saving of partial results if errors occur
+- **Validation**: Basic validation during scraping to identify and flag incomplete records
+- **Deduplication**: Post-processing to identify and remove duplicate job postings across platforms
+
 ## Project Setup
 
 ### Installation Requirements
@@ -32,6 +77,8 @@ seaborn
 nltk
 plotly
 wordcloud
+selenium
+webdriver-manager
 ```
 
 ### Directory Structure
@@ -48,8 +95,9 @@ Project_1_CMPSC_445/
 │   ├── main.py  # Main scraper
 │   ├── *.csv 
 ├── USAJOBS_scraper/                     
-│   ├── main.py  # Main analysis script
-│   ├── *.csv          
+│   ├── main.py  # Main USAJOBS scraper
+│   ├── csv_exports/  # Directory for scraped data exports
+│   │   ├── usajobs_tech_jobs_*.csv  # Timestamped CSV files
 ```
 
 ## Running the Analysis
@@ -200,8 +248,3 @@ The analysis generates the following outputs:
   ![image](https://github.com/user-attachments/assets/df6d2310-05a6-42e3-814e-48e59a4989bd)
   ![image](https://github.com/user-attachments/assets/8e70ec35-4b17-4412-a887-e18f2d50fe90)
   ![image](https://github.com/user-attachments/assets/a1350381-cce9-4313-9f8d-72cb651feae0)
-
-
-
-
-
