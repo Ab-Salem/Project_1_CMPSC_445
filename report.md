@@ -182,21 +182,6 @@ The analysis generates the following outputs:
 - Map of average salaries by location
 - Word cloud of most common skills
 
-## Troubleshooting
-
-If you encounter issues:
-
-1. **No CSV files found**:
-   - Ensure you're running the script from the directory that contains your CSV files
-   - If your data is in a different directory, specify it with --data-dir
-
-2. **Missing columns**:
-   - The script can handle missing columns and will create placeholder data
-   - For best results, ensure your CSV files have at least the following columns: title, location, salary
-
-3. **Insufficient salary data**:
-   - The script generates synthetic salary data when insufficient real data is available
-   - This enables model training and visualization even with limited salary information
 
 ## Future Improvements
 
@@ -207,3 +192,16 @@ If you encounter issues:
 - Integrate with live data sources for continuous updates
 - Enhance predictive models to achieve higher R² scores
 - Expand analysis to include additional factors like experience level and education requirements
+
+  ##Visuals
+  ![image](https://github.com/user-attachments/assets/94941ae7-a3f0-4fbf-9771-ef785231ea49)
+  ![image](https://github.com/user-attachments/assets/14646269-2877-41a5-a864-d889e973055e)
+  ![image](https://github.com/user-attachments/assets/446b742d-e6da-4cb1-adae-606c3ae1b174)
+  ![image](https://github.com/user-attachments/assets/df6d2310-05a6-42e3-814e-48e59a4989bd)
+  ![image](https://github.com/user-attachments/assets/8e70ec35-4b17-4412-a887-e18f2d50fe90)
+  ![image](https://github.com/user-attachments/assets/a1350381-cce9-4313-9f8d-72cb651feae0)
+
+
+
+
+
