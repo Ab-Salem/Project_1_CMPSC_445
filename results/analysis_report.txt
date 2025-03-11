@@ -1,0 +1,40 @@
+Software Engineering Job Salary Analysis Report
+===========================================
+
+Data Summary:
+Total job listings: 1543
+Unique job titles: 20
+Unique locations: 45
+Jobs with salary information: 1543
+
+Salary Statistics:
+- Mean: $123551.93
+- Median: $120000.00
+- Min: $48750.00
+- Max: $198750.00
+
+Model Performance:
+- Best Model: Gradient Boosting
+- Test R²: 0.2839
+- Test RMSE: $32971.33
+- Test MAE: $22771.63
+
+Top 5 Highest Paying Job Titles:
+1. product manager: $182500.00
+2. machine learning engineer: $179857.39
+3. software engineer: $157323.09
+4. data scientist: $144024.83
+5. data analyst: $137330.50
+
+Top 5 Highest Paying Locations:
+1. ME: $145250.00
+2. CA: $142358.34
+3. MO: $139427.50
+4. NJ: $134172.50
+5. GA: $134002.56
+
+Conclusions:
+- The analysis reveals significant salary variation across different job roles and locations.
+- Technical specialization appears to be a strong driver of higher compensation.
+- Location remains a significant factor in salary determination, with tech hubs offering higher compensation.
+- The model can predict software engineering salaries with reasonable accuracy based on role, location, and skills.

@@ -1,0 +1,18 @@
+Model Performance Metrics
+========================
+
+Random Forest Model:
+Training RMSE: $28390.12
+Training R²: 0.3845
+Training MAE: $19225.41
+Test RMSE: $34378.14
+Test R²: 0.2215
+Test MAE: $24949.06
+
+Gradient Boosting Model:
+Training RMSE: $26957.93
+Training R²: 0.4451
+Training MAE: $17200.26
+Test RMSE: $32971.33
+Test R²: 0.2839
+Test MAE: $22771.63
